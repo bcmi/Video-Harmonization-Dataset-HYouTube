@@ -66,4 +66,4 @@ We provide the script lut_transfer_sample.py to generate composite video based o
   ```
   python lut_transfer_sample.py
   ```
-
+Before you run the code, you should change the path of real video directroy, the path of video mask, the path of LUT and the storage path to generate your composite video.

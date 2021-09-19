@@ -64,6 +64,6 @@ Besides, we also synthesize  real  composite videos.  We collect  video  foregro
 We provide the script lut_transfer_sample.py to generate composite video based on real video, foreground mask, and LUT.
 
   ```
-  python generate_composite.py
+  python lut_transfer_sample.py
   ```
 

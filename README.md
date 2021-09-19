@@ -60,7 +60,7 @@ Besides, we also synthesize  real  composite videos.  We collect  video  foregro
 - PIL
 
 - pillow_lut
-#### Getting Started
+#### Demo
 We provide the script lut_transfer_sample.py to generate composite video based on real video, foreground mask, and LUT.
 
   ```

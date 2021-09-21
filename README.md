@@ -74,7 +74,7 @@ Before you run the code, you should change the path of real video directroy, the
 If you find this work useful for your research, please cite our paper using the following BibTeX  [[arxiv](https://arxiv.org/pdf/2109.08809.pdf)]:
 
 ```
-@article{lu2021,
+@article{hyoutube2021,
   title={HYouTube: Video Harmonization Dataset},
   author={Xinyuan Lu, Shengyuan Huang, Li Niu, Wenyan Cong, Liqing Zhang},
   journal={arXiv preprint arXiv:2109.08809},

@@ -40,7 +40,7 @@ Or evaluate without refinement module
 ```bash
 python3  scripts/evaluate_model.py --gpu=0 --dataset_path <Your path to HYouTube> --val_list ./test_frames.txt --backbone ./final_models/issam_backbone.pth --previous_num 8 --future_num 8 
 ```
-Your can also use your own backbone or whole models. Please replace Arguments **checkpoint/backbone** by your own model. Notice you can also choose your own previous number and future number of neigbors by changing Arguments **previous_num/future_num**.
+Your can also use your own backbone or whole models. Please replace Arguments **checkpoint/backbone** by your own model. Notice you can also choose your own previous number and future number of neigbors by changing Arguments **previous_num/future_num**. Argument **Use_feature** decides whether to use final feature of backbone model. You can refer Table 2 in the paper for more information.
 
 ## Train your own model
 We use a two-step training step, which means we firstly train backbone on HYoutube and then fix backbone and train refinement module. 

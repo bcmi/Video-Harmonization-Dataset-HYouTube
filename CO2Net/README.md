@@ -63,9 +63,9 @@ It will directly read LUT result and not need to read all neigbors images. It wi
 Then you can evaluate it by above instruction.
 
 ## Evaluate temporal consistency
-we need you to download TL test set, which is sub test set for calculating temporal loss (TL), and prepare Flownet2, which is used for calculating flow and image warping.
+we need you to download TL test set, which is sub test set for calculating temporal loss (TL) and prepare Flownet2, which is used for calculating flow and image warping. TL test set is generated from FlowNet2 and the next frame of HYouTube
 ### Prepare FlowNetV2
-Please follow command of [FlowNetV2](https://github.com/NVIDIA/flownet2-pytorch) to install and download FlowNetV2 weight. Please put FlowNet directory on ``` ./ ``` and its weight on  ``` ./flownet/FlowNet2_checkpoint.pth.tar ```
+Please follow command of [FlowNet2](https://github.com/NVIDIA/flownet2-pytorch) to install and download FlowNet2 weight. Please put FlowNet directory on ``` ./ ``` and its weight on  ``` ./flownet/FlowNet2_checkpoint.pth.tar ```
 ### Prepare TL dataset
 Please download TL test set from [**Baidu Cloud**](https://pan.baidu.com/s/1jpiPSkXoj_X3fWWk2vYCqw) (access code: 3v1s)
 

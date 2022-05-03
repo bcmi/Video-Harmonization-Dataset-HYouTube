@@ -34,6 +34,7 @@ pip install -r requirements.txt
 
 ## Train 
 We use a two-step training step, which means we firstly train backbone on HYoutube and then fix backbone and train refinement module.
+
 For stage 1: Backbone training, we provide code for two backbone: [iSSAM](https://openaccess.thecvf.com/content/WACV2021/papers/Sofiiuk_Foreground-Aware_Semantic_Representations_for_Image_Harmonization_WACV_2021_paper.pdf) [WACV2021] and [RainNet](https://openaccess.thecvf.com/content/CVPR2021/papers/Ling_Region-Aware_Adaptive_Instance_Normalization_for_Image_Harmonization_CVPR_2021_paper.pdf)[CVPR2021].You can follow the same path of their repo to train your own backbone model ([iSSAM](https://github.com/saic-vul/image_harmonization) and [RainNet](https://github.com/junleen/RainNet)). 
 We release iSSAM backbone here (``` ./final_models/issam_backbone.pth ```).
 

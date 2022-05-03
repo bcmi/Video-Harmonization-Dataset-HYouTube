@@ -65,7 +65,7 @@ Then you can evaluate it by above instruction.
 ## Evaluate temporal consistency
 we need you to download TL test set, which is sub test set for calculating temporal loss (TL), and install Flownet2
 ### Prepare FlowNetV2
-Please follow command of [FlowNetV2](https://github.com/NVIDIA/flownet2-pytorch) to install and download FlowNetV2 weight. Please put FlowNet directory on ``` ./flownet ``` and its weight on  ``` ./flownet/FlowNet2_checkpoint.pth.tar ```
+Please follow command of [FlowNetV2](https://github.com/NVIDIA/flownet2-pytorch) to install and download FlowNetV2 weight. Please put FlowNet directory on ``` ./ ``` and its weight on  ``` ./flownet/FlowNet2_checkpoint.pth.tar ```
 ### Prepare TL dataset
 Please download TL test set from [**Baidu Cloud**](https://pan.baidu.com/s/1jpiPSkXoj_X3fWWk2vYCqw) (access code: 3v1s)
 

@@ -1,1 +1,6 @@
-
+torch==1.8.0+cu11
+numpy==1.19.5
+scikit-image==0.17.2
+albumentations==1.0.3
+argparse==1.4.0
+opencv-python==4.5.3

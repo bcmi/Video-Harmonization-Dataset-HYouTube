@@ -15,6 +15,7 @@ cd CO2Net
 Download HYoutube from [**Baidu Cloud**](https://pan.baidu.com/s/1LG15_3M4ISSyhRiVa6coig) (access code: dk07) or [**Bcmi Cloud**](https://cloud.bcmi.sjtu.edu.cn/sharing/MI8ygiNQZ). 
 
 ### Install cuda package
+We provide two CUDA operation here for LUT calculation. Please make sure you have already installed CUDA. 
 ```bash
 cd CO2Net
 cd trilinear
@@ -31,20 +32,10 @@ cd tridistribute
 pip install -r requirements.txt
 ```
 
-## Evaluate by our released model
-```bash
-python3  scripts/evaluate_model.py --gpu=0 --dataset_path <Your path to HYouTube> --val_list ./test_frames.txt --backbone ./final_models/issam_backbone.pth --previous_num 8 --future_num 8  --use_feature --checkpoint ./final_models/issam_final.pth
-```
-Or evaluate without refinement module
-
-```bash
-python3  scripts/evaluate_model.py --gpu=0 --dataset_path <Your path to HYouTube> --val_list ./test_frames.txt --backbone ./final_models/issam_backbone.pth --previous_num 8 --future_num 8 
-```
-Your can also use your own backbone or whole models. Please replace Arguments **checkpoint/backbone** by your own model. Notice you can also choose your own previous number and future number of neigbors by changing Arguments **previous_num/future_num**. Argument **Use_feature** decides whether to use final feature of backbone model. You can refer Table 2 in the paper for more information.
-
-## Train your own model
-We use a two-step training step, which means we firstly train backbone on HYoutube and then fix backbone and train refinement module. 
-We provide code for two backbone: [iSSAM](https://openaccess.thecvf.com/content/WACV2021/papers/Sofiiuk_Foreground-Aware_Semantic_Representations_for_Image_Harmonization_WACV_2021_paper.pdf) [WACV2021] and [RainNet](https://openaccess.thecvf.com/content/CVPR2021/papers/Ling_Region-Aware_Adaptive_Instance_Normalization_for_Image_Harmonization_CVPR_2021_paper.pdf)[CVPR2021]. You can follow the same path of their repo to train backbone model ([iSSAM](https://github.com/saic-vul/image_harmonization) and [RainNet](https://github.com/junleen/RainNet)). We release iSSAM backbone here.
+## Train 
+We use a two-step training step, which means we firstly train backbone on HYoutube and then fix backbone and train refinement module.
+For stage 1: Backbone training, we provide code for two backbone: [iSSAM](https://openaccess.thecvf.com/content/WACV2021/papers/Sofiiuk_Foreground-Aware_Semantic_Representations_for_Image_Harmonization_WACV_2021_paper.pdf) [WACV2021] and [RainNet](https://openaccess.thecvf.com/content/CVPR2021/papers/Ling_Region-Aware_Adaptive_Instance_Normalization_for_Image_Harmonization_CVPR_2021_paper.pdf)[CVPR2021].You can follow the same path of their repo to train your own backbone model ([iSSAM](https://github.com/saic-vul/image_harmonization) and [RainNet](https://github.com/junleen/RainNet)). 
+We release iSSAM backbone here (``` ./final_models/issam_backbone.pth ```).
 
 For stage 2: Refinement module training, you can directly train by 
 ```bash
@@ -60,7 +51,22 @@ then you can use
 python3  scripts/my_train.py --gpu=1 --dataset_path  <Your path to HYouTube> --train_list ./train_list.txt --val_list ./test_frames.txt --backbone_type <Your backbone type> --backbone  <Your backbone model> --previous_num 8 --future_num 8 --use_feature --normalize_inside --exp_name <exp_name> --lut_map_dir <directory to store lut map> --lut_output_dir <directory to store lut output>
 ```
 It will directly read LUT result and not need to read all neigbors images. It will speed up.
-Then you can evaluate it by above instruction.
+
+
+## Evaluate
+We release our model of iSSAM(```./final_models/issam_backbone.pth```), our framework's result with iSSAM as backbone(```./final_models/issam_final.pth```).  To compar with our method, we also use [Huang et al.'s](https://arxiv.org/abs/1809.01372) way to train iSSAM and release it in ```./final_models/issam_huang.pth```. Notice the result model of their method is totally same with iSSAM. So you can treat it as another checkpoint of backbone.
+
+```bash
+python3  scripts/evaluate_model.py --gpu=0 --dataset_path <Your path to HYouTube> --val_list ./test_frames.txt --backbone ./final_models/issam_backbone.pth --previous_num 8 --future_num 8  --use_feature --checkpoint ./final_models/issam_final.pth
+```
+Or evaluate without refinement module, it will test the result of LUT output. 
+
+```bash
+python3  scripts/evaluate_model.py --gpu=0 --dataset_path <Your path to HYouTube> --val_list ./test_frames.txt --backbone ./final_models/issam_backbone.pth --previous_num 8 --future_num 8 
+```
+Your can also use your own backbone or whole models. Please replace Arguments **checkpoint/backbone** by your own model. Notice you can also choose your own previous number and future number of neigbors by changing Arguments **previous_num/future_num**. The Argument **Use_feature** decides whether to use final feature of backbone model. You can refer Table 2 in the paper for more information.
+
+
 
 ## Evaluate temporal consistency
 we need you to download TL test set, which is sub test set for calculating temporal loss (TL) and prepare Flownet2, which is used for calculating flow and image warping. TL test set is generated from FlowNet2 and the next unannotated frame of HYouTube. For more information, please see Section 3 in the supplementary.

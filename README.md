@@ -1,4 +1,4 @@
-## Video-Harmonization-Dataset-HYouTube
+# Video-Harmonization-Dataset-HYouTube
 
 The  figure below depicts dataset construction process (red arrows) and video harmonization task (blue arrows).
 

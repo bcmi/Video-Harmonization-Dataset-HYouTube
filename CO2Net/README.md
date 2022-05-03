@@ -70,7 +70,7 @@ Please follow command of [FlowNetV2](https://github.com/NVIDIA/flownet2-pytorch)
 Please download TL test set from [**Baidu Cloud**](https://pan.baidu.com/s/1jpiPSkXoj_X3fWWk2vYCqw) (access code: 3v1s)
 
 ### prepare result
-You need to store the numpy result of the model like 
+You need to store the both numpy result of candidate model on both HYoutube's test set and TL test set.
 ```bash
 python3  scripts/evaluate_model.py --gpu=0 --dataset_path <Your path to HYouTube> --val_list ./test_frames.txt --backbone <Your backbone model> --previous_num 8 --future_num 8 --checkpoint <Your checkpoint> --write_npy_result --result_npy_dir <Directory to store numpy result>
 ```

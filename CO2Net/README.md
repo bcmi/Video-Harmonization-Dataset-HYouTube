@@ -46,12 +46,12 @@ Your can also use your own backbone or whole models. Please replace Arguments **
 We use a two-step training step, which means we firstly train backbone on HYoutube and then fix backbone and train refinement module. 
 We provide code for two backbone: [iSSAM](https://openaccess.thecvf.com/content/WACV2021/papers/Sofiiuk_Foreground-Aware_Semantic_Representations_for_Image_Harmonization_WACV_2021_paper.pdf) [WACV2021] and [RainNet](https://openaccess.thecvf.com/content/CVPR2021/papers/Ling_Region-Aware_Adaptive_Instance_Normalization_for_Image_Harmonization_CVPR_2021_paper.pdf)[CVPR2021]. You can follow the same path of their repo to train backbone model ([iSSAM](https://github.com/saic-vul/image_harmonization) and [RainNet](https://github.com/junleen/RainNet)). We release iSSAM backbone here.
 
-For stage 2, refinement module training, you can directly train by 
+For stage 2: Refinement module training, you can directly train by 
 ```bash
 python3  scripts/my_train.py --gpu=1 --dataset_path <Your path to HYouTube> --train_list ./train_list.txt --val_list ./test_frames.txt --backbone <Your backbone model> --backbone_type <Your backbone type, we provide 'issam' and 'rain' here> --previous_num 8 --future_num 8 --use_feature --normalize_inside --exp_name <exp name>
 ```
 
-But since we adopt two stage traing strategy, we highly recommand your to calculate and store the result of Lut like 
+But since we adopt two stage training strategy, we highly recommand you to calculate and store the result of LUT firstly using 
 ```bash
 python3  scripts/evaluate_model.py --gpu=0 --dataset_path <Your path to HYouTube> --val_list ./all_frames.txt --backbone <Your backbone model> --previous_num 8 --future_num 8 --write_lut_output <directory to store lut output> --write_lut_map <directory to store lut map> 
 ```
@@ -59,13 +59,13 @@ then you can use
 ```bash
 python3  scripts/my_train.py --gpu=1 --dataset_path  <Your path to HYouTube> --train_list ./train_list.txt --val_list ./test_frames.txt --backbone  <Your backbone model> --previous_num 8 --future_num 8 --use_feature --normalize_inside --exp_name <exp_name> --lut_map_dir <directory to store lut map> --lut_output_dir <directory to store lut output>
 ```
-It will save time to generate LUT results.
+It will directly read LUT result and not need to read all neigbors images. It will speed up.
 Then you can evaluate it by above instruction.
 
 ## Evaluate temporal consistency
 we need you to download TL test set, which is sub test set for calculating temporal loss (TL), and install Flownet2
-### Prepare
-Please follow command of [FlowNetV2](https://github.com/NVIDIA/flownet2-pytorch) to install and download FlowNetV2 weight.
+### Prepare FlowNetV2
+Please follow command of [FlowNetV2](https://github.com/NVIDIA/flownet2-pytorch) to install and download FlowNetV2 weight. Please put FlowNet directory on ```bash ./flownet ``` and its weight on  ```bash ./flownet ```
 ### Prepare TL dataset
 Please download TL test set from [**Baidu Cloud**](https://pan.baidu.com/s/1jpiPSkXoj_X3fWWk2vYCqw) (access code: 3v1s)
 

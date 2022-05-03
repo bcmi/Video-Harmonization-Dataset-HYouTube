@@ -27,8 +27,9 @@ cd tridistribute
 . ./setup.sh
 ```
 ### Install python package
+```bash
 pip install -r requirements.txt
-
+```
 
 ## Evaluate by our released model
 ```bash

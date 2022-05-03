@@ -2,6 +2,7 @@
 
 The  figure below depicts dataset construction process (red arrows) and video harmonization task (blue arrows).
 And here are three examples in our dataset. The top half is a composite video and the bottom half the corresponding ground-truth video.
+<a href=" ">< img src="https://github.com/bcmi/Video-Harmonization-Dataset-HYouTube/blob/master/Example/1.gif" align="left" height="48" width="48" ></a >
 ![image](https://github.com/bcmi/Video-Harmonization-Dataset-HYouTube/blob/master/Example/1.gif)
 ![image](https://github.com/bcmi/Video-Harmonization-Dataset-HYouTube/blob/master/Example/3.gif)
 ![image](https://github.com/bcmi/Video-Harmonization-Dataset-HYouTube/blob/master/Example/4.gif)

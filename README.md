@@ -194,7 +194,7 @@ The expected quantitative results of released models are as the following table.
 
 
 
-# baselines
+# Baselines
 
 ## 1.Huang et al.
 We implement a simple version of [Temporally Coherent Video Harmonization Using Adversarial Networks](https://arxiv.org/pdf/1809.01372.pdf) using issam as backbone. You can train it by:

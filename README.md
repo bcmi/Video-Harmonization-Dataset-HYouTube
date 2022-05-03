@@ -1,6 +1,10 @@
 # Video-Harmonization-Dataset-HYouTube
 
 The  figure below depicts dataset construction process (red arrows) and video harmonization task (blue arrows).
+And here are three examples in our dataset. The top half is a composite video and the bottom half the corresponding ground-truth video.
+![image](https://github.com/bcmi/Video-Harmonization-Dataset-HYouTube/blob/master/Example/1.gif)
+![image](https://github.com/bcmi/Video-Harmonization-Dataset-HYouTube/blob/master/Example/3.gif)
+![image](https://github.com/bcmi/Video-Harmonization-Dataset-HYouTube/blob/master/Example/4.gif)
 
 **Dataset Construction Process:** Our dataset **HYouTube** is based on [Youtube-VOS-2018](https://youtube-vos.org/challenge/2018/). Given real videos with object masks, we adjust their foregrounds using Lookup Tables (LUTs) to produce synthetic composite videos. We employ in total 100 candidate LUTs, in which one LUT corresponds to one type of color transfer. 
 Given a video sample, we first select a LUT from 100 candidate LUTs randomly to transfer the foreground of each frame. The transferred foregrounds and the original backgrounds form the composite frames, and the composite frames form composite video samples. We provide the script lut_transfer_sample.py to generate composite video based on real video, foreground mask, and LUT.

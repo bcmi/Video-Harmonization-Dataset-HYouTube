@@ -4,7 +4,7 @@ Official implementation of [Deep Video Harmonization  with Color Mapping Consist
 ## Prepare
 - Linux
 - Python 3
-- CPU or NVIDIA GPU + CUDA CuDNN
+- NVIDIA GPU + CUDA CuDNN
 - Clone this repo:
 ```bash
 git clone https://github.com/bcmi/Video-Harmonization-Dataset-HYouTube.git

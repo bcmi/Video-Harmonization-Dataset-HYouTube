@@ -26,6 +26,9 @@ cd CO2Net
 cd tridistribute
 . ./setup.sh
 ```
+### Install python package
+pip install -r requirements.txt
+
 
 ## Evaluate by our released model
 ```bash

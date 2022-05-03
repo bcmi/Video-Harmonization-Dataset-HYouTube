@@ -53,6 +53,9 @@ python3  scripts/my_train.py --gpu=1 --dataset_path  <Your path to HYouTube> --t
 ```
 It will directly read LUT result and not need to read all neigbors images. It will speed up.
 
+Notice you can also choose your own previous number and future number of neigbors by changing Arguments **previous_num/future_num**. The Argument **Use_feature** decides whether to use final feature of backbone model. You can refer Table 2 in the paper for more information.
+
+
 
 ## Evaluate
 We release our backbone of iSSAM(```./final_models/issam_backbone.pth```), our framework's result with iSSAM as backbone(```./final_models/issam_final.pth```).  To compar with our method, we also use [Huang et al.](https://arxiv.org/abs/1809.01372)'s way to train iSSAM and release it in ```./final_models/issam_huang.pth```. Notice the architecture of obtained model by Huang et al.'s method is totally the same as iSSAM. So you can treat it as another checkpoint of backbone.
@@ -71,7 +74,14 @@ python3  scripts/evaluate_model.py --gpu=0 --dataset_path <Your path to HYouTube
 ```
 and see the metrics of backbone.
 
-Your can also use your own backbone or whole models. Please replace Arguments **checkpoint/backbone** by your own model. Notice you can also choose your own previous number and future number of neigbors by changing Arguments **previous_num/future_num**. The Argument **Use_feature** decides whether to use final feature of backbone model. You can refer Table 2 in the paper for more information.
+The expected quantitative results are as the following table. 
+|      | MSE | FMSE | PSNR | fSSIM | 
+| :--: | :---: | :------: | :-----: | :--------: | 
+| Backbone  | 28.90 |  203.77   | 37.38  |   0.8817  |  
+| Huang | 27.89 |  199.89   |  37.44  |   0.8821    | 
+| Ours | 26.50 |  186.72   |  37.61  |   0.8827    |  
+
+Your can also use your own backbone or whole models. Please replace Arguments **checkpoint/backbone** by your own model. 
 
 
 
@@ -95,6 +105,13 @@ Then calculate TL loss using
 ```bash
 python3  scripts/evaluate_flow.py --dataset_path <Your path to HYouTube> --dataset_path_next <Your path to HYouTube_Next> --cur_result <result of current numpy dir> --next_result <result of next numpy dir>
 ```
+
+The expected quantitative results of released models are as the following table. 
+|      | Tl |
+| :--: | :---: |
+| Backbone  | 6.48 | 
+| Huang | 6.49 | 
+| Ours | 5.11 |  
 
 
 

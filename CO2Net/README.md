@@ -55,7 +55,7 @@ It will directly read LUT result and not need to read all neigbors images. It wi
 
 
 ## Evaluate
-We release our model of iSSAM(```./final_models/issam_backbone.pth```), our framework's result with iSSAM as backbone(```./final_models/issam_final.pth```).  To compar with our method, we also use [Huang et al.'s](https://arxiv.org/abs/1809.01372) way to train iSSAM and release it in ```./final_models/issam_huang.pth```. Notice the result model of their method is totally same with iSSAM. So you can treat it as another checkpoint of backbone.
+We release our backbone of iSSAM(```./final_models/issam_backbone.pth```), our framework's result with iSSAM as backbone(```./final_models/issam_final.pth```).  To compar with our method, we also use [Huang et al.](https://arxiv.org/abs/1809.01372)'s way to train iSSAM and release it in ```./final_models/issam_huang.pth```. Notice the architecture of obtained model by Huang et al.'s method is totally the same as iSSAM. So you can treat it as another checkpoint of backbone.
 
 ```bash
 python3  scripts/evaluate_model.py --gpu=0 --dataset_path <Your path to HYouTube> --val_list ./test_frames.txt --backbone ./final_models/issam_backbone.pth --previous_num 8 --future_num 8  --use_feature --checkpoint ./final_models/issam_final.pth
@@ -65,6 +65,12 @@ Or evaluate without refinement module, it will test the result of LUT output.
 ```bash
 python3  scripts/evaluate_model.py --gpu=0 --dataset_path <Your path to HYouTube> --val_list ./test_frames.txt --backbone ./final_models/issam_backbone.pth --previous_num 8 --future_num 8 
 ```
+To evaluate Huang's result, run 
+```bash
+python3  scripts/evaluate_model.py --gpu=0 --dataset_path <Your path to HYouTube> --val_list ./test_frames.txt --backbone ./final_models/issam_huang.pth --previous_num 1 --future_num 0
+```
+and see the metrics of backbone.
+
 Your can also use your own backbone or whole models. Please replace Arguments **checkpoint/backbone** by your own model. Notice you can also choose your own previous number and future number of neigbors by changing Arguments **previous_num/future_num**. The Argument **Use_feature** decides whether to use final feature of backbone model. You can refer Table 2 in the paper for more information.
 
 

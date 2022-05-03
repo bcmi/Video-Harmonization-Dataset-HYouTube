@@ -198,7 +198,7 @@ The expected quantitative results of released models are as the following table.
 
 
 
-## Bibtex
+# Bibtex
 
 If you find this work useful for your research, please cite our paper using the following BibTeX  [[arxiv](https://arxiv.org/pdf/2109.08809.pdf)]:
 

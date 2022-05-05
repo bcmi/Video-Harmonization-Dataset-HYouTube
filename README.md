@@ -214,7 +214,7 @@ If you find this work useful for your research, please cite our paper using the 
 
 ```
 @article{hyoutube2021,
-  title={HYouTube: Video Harmonization Dataset},
+  title={Deep Video Harmonization with Color Mapping Consistency},
   author={Xinyuan Lu, Shengyuan Huang, Li Niu, Wenyan Cong, Liqing Zhang},
   journal={IJCAI},
   year={2022}

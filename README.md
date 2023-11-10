@@ -1,3 +1,6 @@
+# ![hot](https://bcmi.sjtu.edu.cn/~niuli/images/fire.png) Our lab has released the image composition toolbox [libcom](https://github.com/bcmi/libcom), which integrates all the functions related to image composition. The toolbox would be continuously upgraded. Welcome to visit and try :-)
+---
+
 # Video-Harmonization-Dataset-HYouTube
 
 **Video composition** means cutting the foregrounds from one video and pasting them on the backgrounds from another video, resulting in a composite video. However, the inserted foregrounds may be incompatible with the backgrounds in terms of color and illumination statistics. **Video harmonization** aims to adjust the foregrounds in the composite video to make them compatible with the backgrounds, resulting in a harmonious video. Here are three examples of video harmonization, in which the top row contains composite videos and the bottom row contains the corresponding ground-truth harmonious videos.

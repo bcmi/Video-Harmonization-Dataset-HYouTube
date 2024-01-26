@@ -9,7 +9,7 @@
 
 ## HYouTube Dataset
 
-**Dataset Construction:** Our dataset **HYouTube** is built upon large-scale video object segmentation dataset [Youtube-VOS-2018](https://youtube-vos.org/challenge/2018/). Given real videos with object masks, we adjust their foregrounds using Lookup Tables (LUTs) to produce synthetic composite videos. We employ in total 100 candidate LUTs, in which one LUT corresponds to one type of color transfer. 
+**Dataset Construction:** **Our dataset HYouTube is the first public video harmonization dataset** built upon large-scale video object segmentation dataset [Youtube-VOS-2018](https://youtube-vos.org/challenge/2018/). Given real videos with object masks, we adjust their foregrounds using Lookup Tables (LUTs) to produce synthetic composite videos. We employ in total 100 candidate LUTs, in which one LUT corresponds to one type of color transfer. 
 Given a video sample, we first randomly select an LUT from 100 candidate LUTs to transfer the foreground of each frame. The transferred foregrounds and the original backgrounds form the composite frames, and the composite frames form composite video samples. We provide the script `lut_transfer_sample.py` to generate composite video based on real video, foreground mask, and LUT.
 Our dataset includes 3194 pairs of synthetic composite video samples and real video samples, which are split to 2558 training pairs and 636 test pairs. Each video sample contains 20 consecutive frames with the foreground mask for each frame.  Our HYouTube dataset can be downloaded from [**Baidu Cloud**](https://pan.baidu.com/s/1LG15_3M4ISSyhRiVa6coig) (access code: dk07) or [**Bcmi Cloud**](https://cloud.bcmi.sjtu.edu.cn/sharing/MI8ygiNQZ). 
 

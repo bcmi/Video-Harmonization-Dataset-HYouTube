@@ -205,7 +205,7 @@ python3 train.py models/fixed256/improved_ssam.py --gpu=0 --worker=1 --dataset_p
 
 + [Image-Harmonization-Dataset-iHarmony4](https://github.com/bcmi/Image-Harmonization-Dataset-iHarmony4)
 + [Awesome-Image-Harmonization](https://github.com/bcmi/Awesome-Image-Harmonization)
-+ [Awesome-Image-Composition](https://github.com/bcmi/Awesome-Image-Composition)
++ [Awesome-Image-Composition](https://github.com/bcmi/Awesome-Object-Insertion)
 
 
 # Bibtex

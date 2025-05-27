@@ -8,7 +8,7 @@
 
 **Dataset Construction:** **Our dataset HYouTube is the first public video harmonization dataset** built upon large-scale video object segmentation dataset [Youtube-VOS-2018](https://youtube-vos.org/challenge/2018/). Given real videos with object masks, we adjust their foregrounds using Lookup Tables (LUTs) to produce synthetic composite videos. We employ in total 100 candidate LUTs, in which one LUT corresponds to one type of color transfer. 
 Given a video sample, we first randomly select an LUT from 100 candidate LUTs to transfer the foreground of each frame. The transferred foregrounds and the original backgrounds form the composite frames, and the composite frames form composite video samples. We provide the script `lut_transfer_sample.py` to generate composite video based on real video, foreground mask, and LUT.
-Our dataset includes 3194 pairs of synthetic composite video samples and real video samples, which are split to 2558 training pairs and 636 test pairs. Each video sample contains 20 consecutive frames with the foreground mask for each frame.  Our HYouTube dataset can be downloaded from [**Baidu Cloud**](https://pan.baidu.com/s/1LG15_3M4ISSyhRiVa6coig) (access code: dk07) or [**OneDrive**](https://1drv.ms/u/s!AohNSvvkuxZmgS-JzrlDUCFIqfNu?e=c4Gdmc). 
+Our dataset includes 3194 pairs of synthetic composite video samples and real video samples, which are split to 2558 training pairs and 636 test pairs. Each video sample contains 20 consecutive frames with the foreground mask for each frame.  Our HYouTube dataset can be downloaded from [**Baidu Cloud**](https://pan.baidu.com/s/1LG15_3M4ISSyhRiVa6coig) (access code: dk07) or [**Dropbox**](https://www.dropbox.com/scl/fi/1jeyxkiqn1c6v6sa15rqs/HYouTube.zip?rlkey=2r7l1dw9pb3bxwnb4bpmjgmnb&st=t1k6ld5e&dl=0). 
 
 <img src='Example/dataset_construction.png' align="center" width=512>
 
@@ -40,7 +40,7 @@ Our dataset includes 3194 pairs of synthetic composite video samples and real vi
 
 ## Real Composite Videos
 
-For evaluation, we also create 100 real composite videos.  Specifically, we collect  video  foregrounds  with  masks from  a  [video  matting  dataset](https://github.com/nowsyn/DVM)  as  well  as video backgrounds from [Vimeo-90k Dataset](http://toflow.csail.mit.edu/)  and  Internet.  Then,  we  create  composite  videos  via copy-and-paste and finally select 100 composite videos which look reasonable w.r.t. foreground  placement  but  inharmonious w.r.t. color/illumination.  100 real composite videos can be downloaded from [**Baidu Cloud**](https://pan.baidu.com/s/1ID7QDt1IkjT3plV1W-f8hg) (access code: nf9b) or [**OneDrive**](https://1drv.ms/u/s!AohNSvvkuxZmgSteL2FGLF11zs_4?e=rFFNrt).
+For evaluation, we also create 100 real composite videos.  Specifically, we collect  video  foregrounds  with  masks from  a  [video  matting  dataset](https://github.com/nowsyn/DVM)  as  well  as video backgrounds from [Vimeo-90k Dataset](http://toflow.csail.mit.edu/)  and  Internet.  Then,  we  create  composite  videos  via copy-and-paste and finally select 100 composite videos which look reasonable w.r.t. foreground  placement  but  inharmonious w.r.t. color/illumination.  100 real composite videos can be downloaded from [**Baidu Cloud**](https://pan.baidu.com/s/1ID7QDt1IkjT3plV1W-f8hg) (access code: nf9b) or [**Dropbox**](https://www.dropbox.com/scl/fi/xplq7ut7es2nvydbnnv53/real-composite-videos.zip?rlkey=98lsb8vri7u8ugmdwoz1fyzmm&st=p5qbj6gl&dl=0).
 
 
 # Color Transfer Method
@@ -80,7 +80,7 @@ cd Video-Harmonization-Dataset-HYouTube
 cd CO2Net
 ```
 ### Prepare Dataset
-Download HYoutube from [**Baidu Cloud**](https://pan.baidu.com/s/1LG15_3M4ISSyhRiVa6coig) (access code: dk07) or [**OneDrive**](https://1drv.ms/u/s!AohNSvvkuxZmgS-JzrlDUCFIqfNu?e=c4Gdmc). 
+Download HYoutube from [**Baidu Cloud**](https://pan.baidu.com/s/1LG15_3M4ISSyhRiVa6coig) (access code: dk07) or [**Dropbox**](https://www.dropbox.com/scl/fi/1jeyxkiqn1c6v6sa15rqs/HYouTube.zip?rlkey=2r7l1dw9pb3bxwnb4bpmjgmnb&st=qcbw0epm&dl=0). 
 
 ### Install cuda package
 We provide two CUDA operations here for LUT calculation. Please make sure that you have already installed CUDA. 
@@ -158,7 +158,7 @@ You need to download TL test set, which is a sub test set for calculating tempor
 ### Prepare FlowNetV2
 Please follow command of [FlowNet2](https://github.com/NVIDIA/flownet2-pytorch) to install and download FlowNet2 weight. Please put FlowNet directory on ``` ./ ``` and its weight on  ``` ./flownet/FlowNet2_checkpoint.pth.tar ```
 ### Prepare TL dataset
-Please download TL test set from [**Baidu Cloud**](https://pan.baidu.com/s/1jpiPSkXoj_X3fWWk2vYCqw) (access code: 3v1s) or [**OneDrive**](https://1drv.ms/u/s!AohNSvvkuxZmgTD9vb6tLJw3D_HM?e=kn68nW). 
+Please download TL test set from [**Baidu Cloud**](https://pan.baidu.com/s/1jpiPSkXoj_X3fWWk2vYCqw) (access code: 3v1s) or [**Dropbox**](https://www.dropbox.com/scl/fi/zhxtugowirekumej241dw/TL_test_set.zip?rlkey=v2dds5gvqd4qpuwbo4tmrz5el&st=z25i5wjo&dl=0). 
 
 ### Prepare result numpy files and Evaluate
 You need to store the both numpy result of candidate model on both HYoutube's test set and TL test set.

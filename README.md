@@ -4,6 +4,12 @@
 
 ![image](https://github.com/bcmi/Video-Harmonization-Dataset-HYouTube/blob/master/Example/2.gif)
 
+## Online Demo
+
+Try this [online demo](http://libcom.ustcnewly.com/) for image composition (object insertion) built upon [libcom](https://github.com/bcmi/libcom) toolbox and have fun!
+
+[![]](https://github.com/user-attachments/assets/87416ec5-2461-42cb-9f2d-5030b1e1b5ec)
+
 ## HYouTube Dataset
 
 **Dataset Construction:** **Our dataset HYouTube is the first public video harmonization dataset** built upon large-scale video object segmentation dataset [Youtube-VOS-2018](https://youtube-vos.org/challenge/2018/). Given real videos with object masks, we adjust their foregrounds using Lookup Tables (LUTs) to produce synthetic composite videos. We employ in total 100 candidate LUTs, in which one LUT corresponds to one type of color transfer. 

@@ -1,5 +1,10 @@
 # Video-Harmonization-Dataset-HYouTube
 
+Welcome to scan the WeChat QR code to join the discussion group on image composition/compositing, object insertion/addition.
+<p align="center">
+<img width="150" height="150" alt="Image" src="https://github.com/user-attachments/assets/8572a7c4-0f62-4a5f-bc06-9a1d9fcb14e3" />
+</p>
+
 **Video composition** means cutting the foregrounds from one video and pasting them on the backgrounds from another video, resulting in a composite video. However, the inserted foregrounds may be incompatible with the backgrounds in terms of color and illumination statistics. **Video harmonization** aims to adjust the foregrounds in the composite video to make them compatible with the backgrounds, resulting in a harmonious video. Here are three examples of video harmonization, in which the top row contains composite videos and the bottom row contains the corresponding ground-truth harmonious videos.
 
 ![image](https://github.com/bcmi/Video-Harmonization-Dataset-HYouTube/blob/master/Example/2.gif)
